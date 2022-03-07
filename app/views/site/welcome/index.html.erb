@@ -1,2 +1,15 @@
 <h1>Site::Welcome#index</h1>
 <p>Find me in app/views/site/welcome/index.html.erb</p>
+
+<% if user_signed_in?  %>
+  <p>Usuário ESTÁ logado / <b> <%= current_user.email %> </b></p>
+ 
+<% else %>
+  <p>Usuário NÃO está logado</p>
+<% end  %>
+
+<% if admin_signed_in?  %>
+  <p>Admnistrador ESTÁ logado /  <b> <%= current_admin.email %> </b></p>
+  <% else %>
+  <p>Admnistrador NÃO está logado</p>
+<% end  %>
