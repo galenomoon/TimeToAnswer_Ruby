@@ -26,16 +26,17 @@ namespace :dev do
     )
   end
 
-  desc "Adiciona o admnistradores extras"
-  task add_extra_admins: :environment do
-    10.times do |i|
-    Admin.create!(
-      email: Faker::Internet.email,
-      password: DEFAULT_PASSWORD,
-      password_confirmation: DEFAULT_PASSWORD
-    )
+    desc "Adiciona o admnistradores extras"
+    task add_extra_admins: :environment do
+      10.times do |i|
+      Admin.create!(
+        email: Faker::Internet.email,
+        password: DEFAULT_PASSWORD,
+        password_confirmation: DEFAULT_PASSWORD
+      )
+    end
   end
-end
+
 
   desc "Adiciona o usuário padrão"
   task add_default_user: :environment do
