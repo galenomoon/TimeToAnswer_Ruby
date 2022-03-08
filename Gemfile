@@ -34,7 +34,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'tty-spinner'
 gem 'faker'
 gem 'awesome_print'
-
+gem 'htmlbeautifier'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
