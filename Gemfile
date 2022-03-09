@@ -35,6 +35,7 @@ gem 'tty-spinner'
 gem 'faker'
 gem 'awesome_print'
 gem 'htmlbeautifier'
+gem 'nokogiri', '1.10.10'  
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
