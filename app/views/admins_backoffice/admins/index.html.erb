@@ -14,7 +14,7 @@
         <i class="fa fa-plus"> </i>
       <% end %>
 
-      
+
       </th>
     </tr>
   </thead>
@@ -29,7 +29,7 @@
             <i class="fa fa-edit"> </i>
           <% end %>
 
-           <%= link_to admins_backoffice_admin_path(admin), method: :delete , type:"button", class:"btn btn-danger btn-circle" do  %>
+           <%= link_to admins_backoffice_admin_path(admin), method: :delete, data: {confirm: "Deseja Realmente Excluir o Administrador: #{admin.email} ?"}, type:"button", class:"btn btn-danger btn-circle" do  %>
             <i class="fa fa-minus"></i>
           <% end %>
       
