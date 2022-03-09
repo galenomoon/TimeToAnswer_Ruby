@@ -29,14 +29,15 @@ gem 'jbuilder', '~> 2.5'
 
 
 # Gems added manually ^^
-gem 'devise'
+gem 'devise' #login system generator
 gem 'rails-i18n', '~> 5.1'
-gem 'tty-spinner'
-gem 'faker'
-gem 'awesome_print'
-gem 'htmlbeautifier'
+gem 'tty-spinner' 
+gem 'faker' #auto email generator
+gem 'awesome_print' #It's like pry, but better
+gem 'htmlbeautifier' #prettier code
 gem 'nokogiri', '1.10.10'  
-
+gem 'kaminari' #pagination
+gem 'kaminari-i18n' 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
