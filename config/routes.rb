@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     #cria rotas no padrão REST
     resources :admins #Administradores
     resources :subjects #Assuntos/Áreas
+    resources :questions #Perguntas
 
   end
   devise_for :admins
