@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'welcome/index' #Dashboard
     #cria rotas no padrão REST
     resources :admins #Administradores
+    resources :subjects #Assuntos/Áreas
 
   end
   devise_for :admins
