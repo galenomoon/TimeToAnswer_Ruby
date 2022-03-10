@@ -38,6 +38,7 @@ gem 'htmlbeautifier' #prettier code
 gem 'nokogiri', '1.10.10'  
 gem 'kaminari' #pagination
 gem 'kaminari-i18n' 
+gem 'cocoon'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
