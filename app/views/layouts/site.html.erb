@@ -41,8 +41,16 @@
               <li>  <%= link_to 'Entrar', new_user_session_path %></li>
               <li>  <%= link_to 'Cadastar-se', new_user_registration_path %></li>
             <% else  %>
-              <li style="margin-top:15px; margin-right: 30px"> <b><%= current_user.email %> </b></li>
-              <li> 
+              <li style="margin-top:15px; text-align:center; margin-right:15px"> <%= current_user.email %> |
+              </li>
+
+              <li style="display:flex; align-items: center;"> 
+                <i class="fa fa-user fa-fw" style="margin-right:-15px; margin-bottom:3px" ></i> 
+              <%= link_to 'Perfil',users_backoffice_welcome_index_path %>  |
+
+              </li>
+
+              <li > 
               <%= link_to destroy_user_session_path, method: :delete do  %>
                <i class="fa fa-sign-out fa-fw"></i> Sair
               <% end %>
@@ -64,9 +72,18 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<% if notice %>
+  <%= javascript_tag do %>
+    $.bootstrapGrowl('<%= notice %>', {
+    type: 'success',
+    align: 'right',
+    allow_dismiss: true,
+    stackup_spacing: 10
+    })
+  <% end %>
+<% end  %>
+
+
+
   </body>
 </html>
