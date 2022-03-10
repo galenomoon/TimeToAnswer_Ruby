@@ -4,24 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>SITE</title>
+    <title>SITE</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
- <%= stylesheet_link_tag    'application' %>
- <%= stylesheet_link_tag    'site' %>
-
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'site' %>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
     <div class="container">
-
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -35,55 +30,59 @@
             <a class="navbar-brand" href="#">Time To Answer</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav"></ul> 
+            <ul class="nav navbar-nav"></ul>
             <ul class="nav navbar-nav navbar-right">
-            <% unless user_signed_in?  %>
-              <li>  <%= link_to 'Entrar', new_user_session_path %></li>
-              <li>  <%= link_to 'Cadastar-se', new_user_registration_path %></li>
-            <% else  %>
-              <li style="margin-top:15px; text-align:center; margin-right:15px"> <%= current_user.email %> |
-              </li>
-
-              <li style="display:flex; align-items: center;"> 
-                <i class="fa fa-user fa-fw" style="margin-right:-15px; margin-bottom:3px" ></i> 
-              <%= link_to 'Perfil',users_backoffice_welcome_index_path %>  |
-
-              </li>
-
-              <li > 
-              <%= link_to destroy_user_session_path, method: :delete do  %>
-               <i class="fa fa-sign-out fa-fw"></i> Sair
-              <% end %>
-              </li>
-              
+              <% unless user_signed_in?  %>
+                <li>  <%= link_to 'Entrar', new_user_session_path %></li>
+                <li>  <%= link_to 'Cadastar-se', new_user_registration_path %></li>
+              <% else  %>
+                <li style="margin-top:15px; text-align:center; margin-right:15px"> <%= current_user.email %> |
+                </li>
+                <li style="display:flex; align-items: center;">
+                  <i class="fa fa-user fa-fw" style="margin-right:-15px; margin-bottom:3px" ></i>
+                  <%= link_to 'Perfil',users_backoffice_welcome_index_path %>  |
+                </li>
+                <li >
+                  <%= link_to destroy_user_session_path, method: :delete do  %>
+                    <i class="fa fa-sign-out fa-fw"></i> Sair
+                  <% end %>
+                </li>
               <% end  %>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
       </nav>
-
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-          <%= yield %>
+        <h1>Site::Welcome#index</h1>
+        <p>Find me in app/views/site/welcome/index.html.erb</p>
+        <% if user_signed_in?  %>
+          <p>Usuário ESTÁ logado / <b> <%= current_user.email %> </b></p>
+        <% else %>
+          <p>Usuário NÃO está logado</p>
+        <% end  %>
+        <% if admin_signed_in?  %>
+          <p>Admnistrador ESTÁ logado /  <b> <%= current_admin.email %> </b></p>
+        <% else %>
+          <p>Admnistrador NÃO está logado</p>
+        <% end  %>
       </div>
-  
-    </div> <!-- /container -->
-
+      <%= yield %>
+    </div>
+     <!-- /container -->
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
-
-<% if notice %>
-  <%= javascript_tag do %>
-    $.bootstrapGrowl('<%= notice %>', {
-    type: 'success',
-    align: 'right',
-    allow_dismiss: true,
-    stackup_spacing: 10
-    })
-  <% end %>
-<% end  %>
-
-
-
+    <% if notice %>
+      <%= javascript_tag do %>
+        $.bootstrapGrowl('<%= notice %>', {
+        type: 'success',
+        align: 'right',
+        allow_dismiss: true,
+        stackup_spacing: 10
+        })
+      <% end %>
+    <% end  %>
   </body>
 </html>
