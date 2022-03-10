@@ -1,5 +1,15 @@
 # Be sure to restart your server when you modify this file.
 
+
+
+
+
+
+
+
+
+
+
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
@@ -14,7 +24,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 # /app/assets
 Rails.application.config.assets.precompile += %w( admins_backoffice.js admins_backoffice.css
-                                                  users_backoffice.js users_backoffice.css)
+                                                  users_backoffice.js users_backoffice.css
+                                                  admin_devise.js admin_devise.css)
 # /lib/assets
 Rails.application.config.assets.precompile += %w( sb-admin-2.js sb-admin-2.css
                                                   custom.js custom.css img.jpg )
