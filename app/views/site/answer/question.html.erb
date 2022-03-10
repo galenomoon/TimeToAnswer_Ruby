@@ -1,3 +1,10 @@
+<%  if @answer.correct %>
 <h1>
-O ID da resposta selecionada é: <%= params[:answer] %>
+  Parabéns, você ACERTOU! \o/
 </h1>
+<% else %>
+<h1>
+  Infelizmente, você ERROU! :(
+</h1>
+
+<% end %>
