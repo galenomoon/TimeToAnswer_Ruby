@@ -39,6 +39,7 @@ gem 'nokogiri', '1.10.10'
 gem 'kaminari' #pagination
 gem 'kaminari-i18n' 
 gem 'cocoon'
+gem 'rails_db', '2.3.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
