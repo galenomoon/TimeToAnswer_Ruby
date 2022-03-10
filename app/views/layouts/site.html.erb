@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SITE</title>
+    <title>Time To Answer - Home</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application' %>
@@ -27,7 +27,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Time To Answer</a>
+            <%= link_to 'Time to Answer', root_path, class: 'navbar-brand' %>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav"></ul>
@@ -68,18 +68,14 @@
       </nav>
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Site::Welcome#index</h1>
-        <p>Find me in app/views/site/welcome/index.html.erb</p>
-        <% if user_signed_in?  %>
-          <p>Usuário ESTÁ logado / <b> <%= current_user.email %> </b></p>
-        <% else %>
-          <p>Usuário NÃO está logado</p>
-        <% end  %>
-        <% if admin_signed_in?  %>
-          <p>Admnistrador ESTÁ logado /  <b> <%= current_admin.email %> </b></p>
-        <% else %>
-          <p>Admnistrador NÃO está logado</p>
-        <% end  %>
+
+      <% unless params[:term] %>
+      <h2> Últimas Perguntas Cadastradas <h2>
+      <% else %>
+      <h2> Resultados para o termo: <b>"<%= params[:term] %>"</b> <h2>
+
+      <% end %>
+      
       </div>
       <%= yield %>
     </div>
