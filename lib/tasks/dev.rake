@@ -73,6 +73,16 @@ end
     end      
   end
 
+  desc "Reseta o Contador de Assuntos"
+  task reset_subject_counter: :environment do
+    show_spinner("Resetando o Contador de Assuntos...") do
+    Subject.find_each do |subject|
+      Subject.reset_counters(subject.id, :questions) 
+      end      
+    end      
+  end
+
+
   private
 
   def create_question_params(subject = Subject.all.sample)
