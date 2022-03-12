@@ -6,7 +6,6 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
       format.html {  @subjects = Subject.all.order(:description).page(params[:page]) }
       format.pdf {  @subjects = Subject.all.order(:description) }
       format.json { render json: (@subjects = Subject.all.order(:description))}
-     
     end
   end
 
