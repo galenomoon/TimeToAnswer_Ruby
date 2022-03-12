@@ -1,16 +1,46 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+<div>
+    <a class="hiddenanchor" id="signin"></a>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                        <h1>Esqueceu Sua Senha?</h1>
+                        <div>
+                            <div>
+                                <%= f.label :email %>
+                                <br/>
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", required:"" %>
+                            </div>
+                        </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+                        <div>
+                            <%= f.submit "Enviar Instruções para o Meu Email", class:"btn btn-default submit", style: "float: none; margin-left:0; " %>
+                            <%= link_to 'Esqueceu sua senha?', new_user_password_path, class:"reset_pass" %>
+                        </div>
 
-<%= render "users/shared/links" %>
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">New to site?
+
+                                <%= render "users/shared/links", class:"to_register" %>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br/>
+
+                            <div>
+                                <h1>
+                                    <i class="fa fa-comment"></i>
+                                    Time To Answer!</h1>
+                                <p>©2022 All Rights Reserved. Time To Answer!. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    <% end %>
+                </section>
+            </div>
+
+        </div>
+    </div>
