@@ -1,25 +1,49 @@
-<h2>Change your password</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+<div>
+<div class="login_wrapper">
+    <div class="animate form login_form">
+        <section class="login_content">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
+                <h1>Altere sua senha</h1>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+                <div>
+                    <%= f.label :password %>
+                    <br/>
+                    <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+                </div>
+                <div>
+                    <%= f.label :password_confirmation %>
+                    <br/>
+                    <%= f.password_field :password_confirmation, autocomplete: "current-password", class:"form-control" %>
+                </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+                <div>
+                    <%= f.submit "Alterar Senha", class:"btn btn-default submit", style: "float: none; margin-left:0; width: 70%" %>
+                </div>
 
-<%= render "users/shared/links" %>
+                <div class="clearfix"></div>
+                <%= render "users/shared/error_messages", resource: resource %>
+
+                <div class="separator">
+                    <p class="change_link">New to site?
+
+                        <%= render "users/shared/links", class:"to_register" %>
+                    </p>
+
+                    <div class="clearfix"></div>
+                    <br/>
+
+                    <div>
+                        <h1>
+                            <i class="fa fa-comment"></i>
+                            Time To Answer!</h1>
+                        <p>©2022 All Rights Reserved. Time To Answer!. Privacy and Terms</p>
+                    </div>
+                </div>
+            <% end %>
+        </section>
+    </div>
+
+</div></div>
