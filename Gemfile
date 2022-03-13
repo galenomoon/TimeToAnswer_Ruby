@@ -41,6 +41,9 @@ gem 'kaminari-i18n'
 gem 'cocoon'
 gem 'rails_db', '2.3.0'
 gem 'prawn-rails'
+gem 'redis'
+gem 'hiredis'
+gem 'trix'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

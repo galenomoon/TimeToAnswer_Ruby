@@ -1,9 +1,9 @@
-var element = document.getElementById('submit_<%= @answer.question_id %>');
+var element = document.getElementById('submit_<%= @question_id %>');
 element.classList.remove('btn-default')
 element.classList.remove('btn-success')
 element.classList.remove('btn-danger')
 
-<%= @answer.correct %> ? correctAnswer(element): wrongAnswer(element)
+<%= @correct %> ? correctAnswer(element): wrongAnswer(element)
 
 
 function correctAnswer(element){
